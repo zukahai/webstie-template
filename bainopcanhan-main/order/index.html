@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="main.js"></script>
+    <title>Trang chủ</title>
+
+    <script>
+        $(document).ready(function() {
+            $('#navbarDropdown').mouseenter(function() {
+                $('.dropdown-menu').slideToggle(300, "linear");
+            });
+
+            $('.dropdown-menu').mouseleave(function() {
+                $(this).slideToggle(300, "linear");
+            });
+        });
+    </script>
+</head>
+
+<body class="body">
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-brand">
+        <a href="https://www.ctu.edu.vn/"><img src="asset/images/DHCT.png" height="50px" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../">Trang chủ <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./members">Thành viên</a>
+                </li>
+                <li style="color: #a66155;" class="nav-item">
+                    <a class="nav-link" href="./idea">Ý tưởng</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./export">Xuất kho</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="./order/index.html">Đặt hàng</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://phungb1905815ctu.github.io/website/Lienhe.html">Liên hệ</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="gif">
+
+    </div>
+</body>
+
+</html>
+<li class="nav-item dropdown">
+    <a class="nav-link" href="./order">Đặt hàng</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="#">Liên hệ</a>
+</li>
+</ul>
+</div>
+</nav>
+
+<ul class="cards">
+    <li>
+        <a class="card">
+            <img src="../asset/images/product1.png" class="card__image" alt="" />
+            <div class="card__overlay">
+                <div class="card__header">
+                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                    <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
+                    <div class="card__header-text">
+                        <h3 class="card__title" id="product1">Quần áo em bé</h3>
+                        <span class="card__status text-bold text-danger">120.000 VND</span>
+                        <h5 class="card__status text-success">Số lượng: <span id="quantity1">100</span></h5>
+                    </div>
+                </div>
+                <p class="">
+                    <div class="input-group mx-auto" style="width: 80%">
+                        <input type="number" class="form-control" placeholder="Nhập số lượng" min="1" value="1" id="order1">
+                        <div class="input-group-append">
+                            <button class="btn btn-danger" type="button" onclick="order(1)">Đặt hàng</button>
+                        </div>
+                    </div>
+                </p>
+            </div>
+        </a>
+    </li>
+    <li>
+        <a class="card">
+            <img src="../asset/images/product2.png" class="card__image" alt="" />
+            <div class="card__overlay">
+                <div class="card__header">
+                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                    <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
+                    <div class="card__header-text">
+                        <h3 class="card__title" id="product2">Áo phông nam</h3>
+                        <span class="card__status text-bold text-danger">220.000 VND</span>
+                        <h5 class="card__status text-success">Số lượng: <span id="quantity2">200</span></h5>
+                    </div>
+                </div>
+                <p class="">
+                    <div class="input-group mx-auto" style="width: 80%">
+                        <input type="number" class="form-control" placeholder="Nhập số lượng" min="1" value="1" id="order2">
+                        <div class="input-group-append">
+                            <button class="btn btn-danger" type="button" onclick="order(2)">Đặt hàng</button>
+                        </div>
+                    </div>
+                </p>
+            </div>
+        </a>
+    </li>
+    <li>
+        <a class="card">
+            <img src="../asset/images/product3.png" class="card__image" alt="" />
+            <div class="card__overlay">
+                <div class="card__header">
+                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                    <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
+                    <div class="card__header-text">
+                        <h3 class="card__title" id="product3">Áo dài tay nữ</h3>
+                        <span class="card__status text-bold text-danger">320.000 VND</span>
+                        <h5 class="card__status text-success">Số lượng: <span id="quantity3">150</span></h5>
+                    </div>
+                </div>
+                <p class="">
+                    <div class="input-group mx-auto" style="width: 80%">
+                        <input type="number" class="form-control" placeholder="Nhập số lượng" min="1" value="1" id="order3">
+                        <div class="input-group-append">
+                            <button class="btn btn-danger" type="button" onclick="order(3)">Đặt hàng</button>
+                        </div>
+                    </div>
+                </p>
+            </div>
+        </a>
+    </li>
+    <li>
+        <a class="card">
+            <img src="../asset/images/product4.png" class="card__image" alt="" />
+            <div class="card__overlay">
+                <div class="card__header">
+                    <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
+                    <img class="card__thumb" src="https://i.imgur.com/7D7I6dI.png" alt="" />
+                    <div class="card__header-text">
+                        <h3 class="card__title" id="product4">Áo thể thao</h3>
+                        <span class="card__status text-bold text-danger">420.000 VND</span>
+                        <h5 class="card__status text-success">Số lượng: <span id="quantity4">50</span></h5>
+                    </div>
+                </div>
+                <p class="">
+                    <div class="input-group mx-auto" style="width: 80%">
+                        <input type="number" class="form-control" placeholder="Nhập số lượng" min="1" value="1" id="order4">
+                        <div class="input-group-append">
+                            <button class="btn btn-danger" type="button" onclick="order(4)">Đặt hàng</button>
+                        </div>
+                    </div>
+                </p>
+            </div>
+        </a>
+    </li>
+</ul>
+
+
+</div>
+<script>
+    function order(index) {
+        let quantity = Math.floor($('#quantity' + index).text());
+        let order = Math.floor($('#order' + index).val());
+        let product = $('#product' + index).text();
+        let result = quantity - order;
+        if (order <= 0) {
+            toastr.warning("Số lượng phải là số nguyên dương")
+            return;
+        }
+        if (result >= 0) {
+            document.getElementById('quantity' + index).innerHTML = result;
+            toastr.success("Đăt hàng thành công " + order + " " + product)
+        } else {
+            toastr.error("Số lượng " + product + " không đủ")
+        }
+    }
+</script>
+</body>
+
+</html>

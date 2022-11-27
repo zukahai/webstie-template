@@ -1,0 +1,173 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th5 15, 2022 lúc 01:03 PM
+-- Phiên bản máy phục vụ: 10.4.22-MariaDB
+-- Phiên bản PHP: 7.4.27
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Cơ sở dữ liệu: `php`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `assignment`
+--
+
+CREATE TABLE `assignment` (
+  `name` varchar(100) NOT NULL,
+  `work` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `assignment`
+--
+
+INSERT INTO `assignment` (`name`, `work`) VALUES
+('Phan Đức Hải', 'làm việc 1'),
+('Đức Hùng', 'làm việc 3'),
+('Quang Nhận', 'làm việc 4'),
+('Phan Đức Huy', 'làm việc 5'),
+('Nguyễn Văn A', 'Làm việc 2');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `infoproduct`
+--
+
+CREATE TABLE `infoproduct` (
+  `ID` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `datetime` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `infoproduct`
+--
+
+INSERT INTO `infoproduct` (`ID`, `name`, `datetime`) VALUES
+('DH1', 'Nước hoa', '2022-05-15 03:12:39'),
+('DH2', 'Tivi tủ lạnh', '2022-05-15 03:13:17'),
+('DH3', 'Phiếu bé ngoan', '2022-05-15 03:13:48'),
+('DH4', 'Thước kẻ', '2022-05-15 04:00:16'),
+('DH5', 'Áo khoác', '2022-05-15 04:01:43'),
+('DH6', 'Đồng hồ', '2022-05-15 05:47:31'),
+('DH7', 'Bóng rổ', '2022-05-15 02:48:50'),
+('DH8', 'Kính mắt', '2022-05-15 02:50:22'),
+('DH9', 'Laptop', '2022-05-15 03:23:26'),
+('DH10', 'Điện thoại', '2022-05-15 05:13:09'),
+('DH11', 'Bàm phím EK880', '2022-05-15 06:00:52');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `itinerary`
+--
+
+CREATE TABLE `itinerary` (
+  `id` varchar(100) NOT NULL,
+  `datetime` datetime NOT NULL,
+  `location` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `itinerary`
+--
+
+INSERT INTO `itinerary` (`id`, `datetime`, `location`) VALUES
+('DH1', '2022-05-15 03:12:39', 'Đã đặt hàng'),
+('DH2', '2022-05-15 03:13:17', 'Đã đặt hàng'),
+('DH3', '2022-05-15 03:13:48', 'Đã đặt hàng'),
+('DH4', '2022-05-15 04:00:16', 'Đã đặt hàng'),
+('DH5', '2022-05-15 04:01:43', 'Đã đặt hàng'),
+('DH6', '2022-05-15 05:47:31', 'Đã đặt hàng'),
+('DH7', '2022-05-15 02:48:50', 'Đã đặt hàng'),
+('DH8', '2022-05-15 02:50:22', 'Đã đặt hàng'),
+('DH1', '2022-05-15 09:51:16', 'Đã xuât kho'),
+('DH1', '2022-05-15 14:53:35', 'Đã về Việt Nam'),
+('DH9', '2022-05-15 03:23:26', 'Đã đặt hàng'),
+('DH10', '2022-05-15 05:36:28', 'Đã đặt hàng'),
+('DH1', '2022-05-15 05:46:30', 'Đã kiểm tra hàng'),
+('DH1', '2022-05-15 05:46:53', 'Đã nhận hàng'),
+('DH2', '2022-05-15 05:51:15', 'Đã chuyển hàng'),
+('DH2', '2022-05-15 05:51:40', 'Đóng gói hàng'),
+('DH2', '2022-05-15 05:52:21', 'Hoãn do dịch'),
+('DH2', '2022-05-15 05:53:25', 'Đến bưu điện Hà Tĩnh'),
+('DH2', '2022-05-15 05:54:13', 'Huỷ đơn hàng'),
+('DH3', '2022-05-15 05:54:52', 'Huỷ đơn'),
+('DH4', '2022-05-15 05:55:59', 'Chuẩn bị đóng gói'),
+('DH11', '2022-05-15 06:00:52', 'Đã đặt hàng'),
+('DH11', '2022-05-15 06:01:29', 'Chuẩn bị giao hàng'),
+('DH11', '2022-05-15 06:01:37', 'Đóng gói'),
+('DH11', '2022-05-15 06:02:12', 'Chuyển đến bưu điện Đà Nẵng'),
+('DH1', '2022-05-15 06:02:43', 'Đã nhận');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `members`
+--
+
+CREATE TABLE `members` (
+  `hoten` varchar(100) NOT NULL,
+  `msv` varchar(10) NOT NULL,
+  `nganh` varchar(100) NOT NULL,
+  `malop` varchar(100) NOT NULL,
+  `bt1` varchar(200) NOT NULL,
+  `bt2` varchar(200) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `donggop` varchar(100) NOT NULL,
+  `image` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `members`
+--
+
+INSERT INTO `members` (`hoten`, `msv`, `nganh`, `malop`, `bt1`, `bt2`, `email`, `donggop`, `image`) VALUES
+('Nguyễn Văn A', '18IT', 'Công nghệ thông tin', '11113333', 'Link bài 1', 'Link bài 2', 'nguyenvana@gmail.com', '80%', '../asset/images/1.png'),
+('Phan Đức Hải', '18IT', 'Công nghệ thông tin', '222', 'Link bài 1', 'Link bài 2', 'nguyenvana@gmail.com', '100%', '../asset/images/2.png'),
+('Nguyễn Thị B', '18IT', 'Ky thuật phần mềm', '11113333', 'Link bài 1', 'Link bài 2', 'nguyenvana@gmail.com', '80%', '../asset/images/3.png'),
+('Nguyễn Đức C', '18IT', 'Công nghệ thông tin', '11113333', 'Link bài 1', 'Link bài 2', 'nguyenvana@gmail.com', '80%', '../asset/images/4.png'),
+('Trân Quốc D', '18IT', 'Công nghệ thông tin', '11113333', 'Link bài 1', 'Link bài 2', 'nguyenvana@gmail.com', '80%', '../asset/images/5.png');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `teacher`
+--
+
+CREATE TABLE `teacher` (
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `level` varchar(100) NOT NULL,
+  `profile` varchar(100) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `image` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `teacher`
+--
+
+INSERT INTO `teacher` (`name`, `email`, `level`, `profile`, `address`, `image`) VALUES
+('Nguyễn Văn A', 'abc@gmail.com', 'Thạc Sỹ', 'facebook.com', 'Hà Tĩnh', '../asset/images/2.png');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,177 @@
+        @import url('https://fonts.googleapis.com/css?family=Amarante');
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        
+        .wrapper {
+            flex: 1;
+        }
+        
+        img {
+            border: 0;
+            max-width: 100%;
+        }
+        
+        h1 {
+            font-family: 'Amarante', Tahoma, sans-serif;
+            font-weight: bold;
+            font-size: 3.6em;
+            line-height: 1.7em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        /** page structure **/
+        
+        #wrapper {
+            display: block;
+            width: 850px;
+            background: #fff;
+            margin: 0 auto;
+            padding: 10px 17px;
+            -webkit-box-shadow: 2px 2px 3px -1px rgba(0, 0, 0, 0.35);
+        }
+        
+        #keywords {
+            margin: 0 auto;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        
+        #keywords thead {
+            cursor: pointer;
+            background: #c9dff0;
+        }
+        
+        #keywords thead tr th {
+            font-weight: bold;
+            padding: 12px 30px;
+            padding-left: 42px;
+        }
+        
+        #keywords thead tr th span {
+            padding-right: 20px;
+            background-repeat: no-repeat;
+            background-position: 100% 100%;
+        }
+        
+        #keywords thead tr th.headerSortUp,
+        #keywords thead tr th.headerSortDown {
+            background: #acc8dd;
+        }
+        
+        #keywords thead tr th.headerSortUp span {
+            background-image: url('https://i.imgur.com/SP99ZPJ.png');
+        }
+        
+        #keywords thead tr th.headerSortDown span {
+            background-image: url('https://i.imgur.com/RkA9MBo.png');
+        }
+        
+        #keywords tbody tr {
+            color: #555;
+        }
+        
+        #keywords tbody tr td {
+            text-align: center;
+            padding: 15px 10px;
+        }
+        
+        #keywords tbody tr td.lalign {
+            text-align: left;
+        }
+        
+        .add {
+            margin: auto;
+            margin-top: 20px;
+            width: 50%;
+            justify-content: center;
+        }
+        /* General Styles */
+        
+        center>h4 {
+            color: #ffffff;
+            margin-top: 50px;
+        }
+        
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-color: #9c9c9c;
+        }
+        
+        ul#growing-add-freebie {
+            display: table;
+            list-style: none;
+            margin: 30px auto 0 auto;
+            padding: 0;
+        }
+        
+        ul#growing-add-freebie>li {
+            float: left;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            padding: 10px 10px;
+        }
+        
+        ul#growing-add-freebie>li:last-child {
+            margin-right: 0;
+        }
+        
+        ul#growing-add-freebie>li>span {
+            margin-bottom: 10px;
+        }
+        
+        .growing-add {
+            padding: 5px 5px 5px 7px;
+            border-radius: 5px;
+            background: #fff;
+        }
+        
+        .growing-add div {
+            display: inline-block;
+            font-size: 12px;
+        }
+        
+        .growing-add .input input {
+            margin-right: 0;
+            border: none;
+            font-size: 25px;
+            transition: width 200ms;
+            padding-top: 5px;
+            padding-left: 5px;
+            padding-bottom: 5px;
+            width: 500px;
+            color: #aaa;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .growing-add .input input:focus {
+            background-color: black;
+            color: white;
+        }
+        
+        .growing-add .submit button {
+            margin-left: 0;
+            border: none;
+            font-size: 1.15em;
+            color: #aaa;
+            background-color: #fff;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            transition: color 200ms;
+        }
+        
+        .growing-add .input input:hover,
+        .growing-add .submit button:hover {
+            cursor: pointer;
+        }
+        
+        .growing-add .input input:focus,
+        .growing-add .submit button:focus {
+            outline: none;
+        }
+        
+        .growing-add .submit button:hover {
+            color: #3498db;
+        }

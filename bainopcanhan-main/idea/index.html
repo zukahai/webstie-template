@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ý tưởng</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/owl-carousel.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/idea.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#navbarDropdown').mouseenter(function() {
+                $('.dropdown-menu').slideToggle(300, "linear");
+            });
+
+            $('.dropdown-menu').mouseleave(function() {
+                $(this).slideToggle(300, "linear");
+            });
+        })
+    </script>
+
+    <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-brand" style="background-color: black;">
+            <a href="https://www.ctu.edu.vn/"><img src="../asset/images/DHCT.png" height="50px" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../">Trang chủ <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./members">Thành viên</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./idea">Ý tưởng</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <li class="nav-item">
+                    <a class="nav-link" href="./export">Xuất kho</a>
+                </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <section id="about" class="page-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 main-service">
+                    <h2 style="margin: center;"></h2>
+                    
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item first-service">
+                        <div class="icon">
+                            <img src="img/first-service-icon.png" alt="">
+                        </div>
+                        <h4>Ý Tưởng</h4>
+                        <ui style="list-style-type: square;">
+                        <p>Kiểm tra số lượng hàng trong kho so với số lượng mà khách đặt hàng. Nếu:</p>
+                        <li style="text-align: justify;">Đủ số lượng với yêu cầu của khách thì sẽ được "Xuất kho thành công"</li>
+                        <li style="text-align: justify;">Ngược lại hệ thống sẽ báo "Số lượng không đủ"</li>
+                        </ui>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item second-service">
+                        <div class="icon">
+                            <img src="img/second-service-icon.png" alt="">
+                        </div>
+                        <h4> Cách Thực Hiện </h4>
+                        <p> Gồm 3 bước </p>
+                        <ul style="list-style-type:square;">
+                        <li style="text-align: justify;">Nhận đơn từ khách hàng</li>
+                        <li style="text-align: justify;">Bắt đầu kiểm tra lượng hàng trong kho</li>
+                        <li style="text-align: justify;">Thông báo kết quả</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item third-service">
+                        <div class="icon">
+                            <img src="img/third-service-icon.png" alt="">
+                        </div>
+                        <h4 > Kết quả </h4>
+                        <p> Thông báo </p>
+                        <ul style="list-style-type: square">
+                        <li style="text-align: justify;">Xuất kho thành công.</li>
+                        <li style="text-align: justify;">Số lượng không đủ.</li>
+                         </ul>  
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

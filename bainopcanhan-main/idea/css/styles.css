@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    outline: none!important;
+}
+
+.intro .border-button {
+    margin-top: 45px;
+}
+
+#about {
+    padding: 0px;
+    background-image: url(../img/nennull.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+#about .service-item {
+    text-align: center;
+    margin: 0px -15px;
+    padding: 120px 45px;
+}
+
+#about .service-item h4 {
+    margin-top: 45px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #a66155;
+    text-transform: uppercase;
+}
+
+#about .service-item p {
+    text-align: justify;
+    margin-bottom: 0px;
+    color: #000080;
+}
+
+#about .main-service {
+    
+    color: #a66155;
+    font-size: 30px;
+    width: 100vw;
+    text-align: center;
+    padding: 120px 45px;
+}
+
+#about .first-service {
+    margin-left: 20px;
+    margin-top: 10px;
+    border-radius: 20px;
+    border: 2px solid rgb(139, 194, 177);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+    transition: all .2s ease-in-out;
+    padding: 80px;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+
+}
+
+#about .first-service:hover {
+    margin-top: 0;
+    background-color: rgb(255, 127, 80);
+    height: 65vh;
+    transition: margin 200ms;
+}
+
+#about .second-service:hover {
+    margin-top: 0;
+    background-color: rgb(255, 127, 80);
+    height: 65vh;
+    transition: margin 200ms;
+}
+
+#about .second-service {
+    margin-left: 20px;
+    margin-top: 10px;
+    border-radius: 20px;
+    border: 2px solid rgb(139, 194, 177);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+    transition: all .2s ease-in-out;
+    padding: 80px;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+}
+
+#about .third-service {
+    margin-left: 20px;
+    margin-top: 10px;
+    border-radius: 20px;
+    border: 2px solid rgb(139, 194, 177);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+    transition: all .2s ease-in-out;
+    padding: 80px;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+}
+
+#about .third-service:hover {
+    margin-top: 0;
+    background-color: rgb(255, 127, 80);
+    height: 65vh;
+    transition: margin 200ms;
+}
+
+#about .service-item .icon {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    text-align: center;
+    line-height: 74px;
+    background-color: transparent;
+}

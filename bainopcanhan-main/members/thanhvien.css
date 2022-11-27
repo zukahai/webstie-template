@@ -1,0 +1,330 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: 100%;
+    background-color: #FCFCFC;
+    /* background-color: paleturquoise; */
+}
+
+.article-cell {
+    grid-area: 'article-cell';
+}
+
+.right-cell {
+    grid-area: 'right-cell';
+}
+
+main {
+    width: 80%;
+    display: grid;
+    /* grid-template-areas: 'article-cell article-cell article-cell left-cell'; */
+    grid-template-columns: 100%;
+    gap: 10px;
+    margin: 0 auto;
+    font-family: 'Nunito', sans-serif;
+    color: #454545;
+    padding-top: 70px;
+}
+
+article,
+aside {
+    height: 80vh;
+    /* background-color: plum; */
+}
+
+.d-none {
+    display: none;
+}
+
+.un-enable {
+    transition: box-shadow .3s ease-in-out;
+    opacity: .7;
+}
+
+.circle {
+    border-radius: 9999px;
+}
+
+#head,
+#btn-work {
+    /* width: 100%; */
+    /* background-color: #F95555; */
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+#btn-work button {
+    z-index: 1000;
+    width: 100%;
+    height: 40px;
+    border: 0;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #454545;
+    cursor: pointer;
+}
+
+#info-student,
+#work {
+    width: 100%;
+    height: 400px;
+    opacity: 1;
+    /* background-color: aliceblue; */
+}
+
+#info-lecturer {
+    width: 100%;
+    height: 130px;
+    /* background-color: aliceblue; */
+}
+
+#work table,
+#info-lecturer table {
+    margin: 0 auto;
+    width: 90%;
+}
+
+#work table {
+    height: 250px;
+}
+
+#work table td:not(:last-child) {
+    padding-left: 10px;
+}
+
+#work table td:last-child {
+    text-align: center;
+}
+
+#work .main-work h2 {
+    line-height: 3;
+    text-align: center;
+}
+
+#work .main-work {
+    width: 100%;
+    height: 100%;
+    height: 300px;
+}
+
+.card-item {
+    background: #F4F4F4;
+    box-shadow: 2px 2px 9px rgba(7, 9, 31, 0.26), inset -2px -2px 0px rgba(0, 0, 0, 0.04), inset 2px 2px 5px 1px #FFFFFF;
+}
+
+.card-unenable {
+    transition: .2s ease-in-out;
+    background: #FCFCFC;
+    border: 2px solid #E1DDDD;
+}
+
+.main-content {
+    width: 100%;
+    border-radius: 6px;
+}
+
+#info-student .main-content,
+#work .main-content {
+    height: 96%;
+}
+
+#info-student .main-content.hidden,
+#work .main-content.hidden {
+    transition: .2s;
+    transform: translateX(-30%) scale(.8);
+    opacity: 0;
+}
+
+#info-student .main-content.show,
+#work .main-content.show {
+    transition: .2s;
+    transform: scale(1);
+}
+
+#info-lecturer .main-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.card-header {
+    position: relative;
+    width: 100%;
+    height: 30%;
+    top: -50px;
+    text-align: center;
+}
+
+.card-header h1 {
+    margin-top: -80px;
+    /* padding-bottom: 100px; */
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.card-header p {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: -30px;
+    padding: 0px;
+}
+
+.card-header .stu-avt {
+    width: 150px;
+    height: 150px;
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#list-student .main-list {
+    width: 100%;
+    height: 530px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 10px;
+}
+
+.main-list .member {
+    width: 100%;
+    height: 85px;
+    border-radius: 8px;
+    margin: 10px 0px 10px 0px;
+    cursor: pointer;
+}
+
+.main-list .member:hover {
+    transition: .2s;
+    transform: scale(1.02);
+    background-color: #F4F4F4;
+}
+
+.avt-circle {
+    width: 130px;
+    height: 130px;
+    background-image: url(../asset/images/2.png);
+    background-size: cover;
+    background-position: 0px 0px;
+}
+
+.card-content {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.card-content table {
+    width: 85%;
+}
+
+.card-content table tr {
+    height: 40px;
+}
+
+table tr i {
+    width: 35px;
+    font-size: 20px;
+    color: #F95555;
+}
+
+.card-footer {
+    width: 100%;
+    height: 50px;
+}
+
+.card-footer .social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.card-footer .social i {
+    color: #454545;
+    font-size: 23px;
+}
+
+.member {
+    display: flex;
+}
+
+.member .left-item {
+    margin-left: 10px;
+    width: 70px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.member .left-item .around-avt {
+    width: 58px;
+    height: 58px;
+    background-color: #F4F4F4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.member .around-avt .avt-item {
+    width: 50px;
+    height: 50px;
+    /* background-image: url(images/khoa.jpg); */
+    background-size: cover;
+    background-position: 0px -10px;
+}
+
+.member .info-item {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.info-item .main-info {
+    height: 50px;
+    margin-left: 10px;
+}
+
+.info-item h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.info-item span {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.card-unenable h2,
+.card-unenable span {
+    opacity: .7;
+}
+
+@media only screen and (max-width: 1440px) {
+    main {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    main {
+        width: 95%;
+    }
+    .info-item h2 {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .info-item span {
+        font-size: 11px;
+        font-weight: 400;
+    }
+}
