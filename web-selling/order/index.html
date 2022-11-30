@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="./toastr.css">
     <script src="../asset/js/audio.js"></script>
     <link rel="stylesheet" href="../css/toggle.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
 
     <script>
         $(document).ready(function() {
@@ -98,7 +99,7 @@
                         <img class="card__thumb" src="../asset/images/2.png" alt="" />
                         <div class="card__header-text">
                             <h3 class="card__title" id="product1">Quần áo em bé</h3>
-                            <span class="card__status text-bold text-danger">120.000 VND</span>
+                            <span class="card__status text-bold text-danger" id="price1">120.000 VND</span>
                             <h5 class="card__status text-success">Số lượng: <span id="quantity1">100</span></h5>
                         </div>
                     </div>
@@ -122,7 +123,7 @@
                         <img class="card__thumb" src="../asset/images/2.png" alt="" />
                         <div class="card__header-text">
                             <h3 class="card__title" id="product2">Áo phông nam</h3>
-                            <span class="card__status text-bold text-danger">220.000 VND</span>
+                            <span class="card__status text-bold text-danger" id="price2">220.000 VND</span>
                             <h5 class="card__status text-success">Số lượng: <span id="quantity2">200</span></h5>
                         </div>
                     </div>
@@ -146,7 +147,7 @@
                         <img class="card__thumb" src="../asset/images/2.png" alt="" />
                         <div class="card__header-text">
                             <h3 class="card__title" id="product3">Áo dài tay nữ</h3>
-                            <span class="card__status text-bold text-danger">320.000 VND</span>
+                            <span class="card__status text-bold text-danger" id="price3">320.000 VND</span>
                             <h5 class="card__status text-success">Số lượng: <span id="quantity3">150</span></h5>
                         </div>
                     </div>
@@ -170,7 +171,7 @@
                         <img class="card__thumb" src="../asset/images/2.png" alt="" />
                         <div class="card__header-text">
                             <h3 class="card__title" id="product4">Áo thể thao</h3>
-                            <span class="card__status text-bold text-danger">420.000 VND</span>
+                            <span class="card__status text-bold text-danger" id="price4">420.000 VND</span>
                             <h5 class="card__status text-success">Số lượng: <span id="quantity4">50</span></h5>
                         </div>
                     </div>
@@ -194,7 +195,7 @@
                         <img class="card__thumb" src="../asset/images/2.png" alt="" />
                         <div class="card__header-text">
                             <h3 class="card__title" id="product5">Bộ đồ đi chơi</h3>
-                            <span class="card__status text-bold text-danger">420.000 VND</span>
+                            <span class="card__status text-bold text-danger " id="price5">420.000 VND</span>
                             <h5 class="card__status text-success">Số lượng: <span id="quantity5">50</span></h5>
                         </div>
                     </div>
@@ -218,7 +219,7 @@
                         <img class="card__thumb" src="../asset/images/2.png" alt="" />
                         <div class="card__header-text">
                             <h3 class="card__title" id="product6">Áo đá bóng</h3>
-                            <span class="card__status text-bold text-danger">320.000 VND</span>
+                            <span class="card__status text-bold text-danger" id="price6">320.000 VND</span>
                             <h5 class="card__status text-success">Số lượng: <span id="quantity6">60</span></h5>
                         </div>
                     </div>
@@ -242,7 +243,7 @@
                         <img class="card__thumb" src="../asset/images/2.png" alt="" />
                         <div class="card__header-text">
                             <h3 class="card__title" id="product7">Âu phục nữ</h3>
-                            <span class="card__status text-bold text-danger">420.000 VND</span>
+                            <span class="card__status text-bold text-danger" id="price7">420.000 VND</span>
                             <h5 class="card__status text-success">Số lượng: <span id="quantity7">50</span></h5>
                         </div>
                     </div>
@@ -266,7 +267,7 @@
                         <img class="card__thumb" src="../asset/images/2.png" alt="" />
                         <div class="card__header-text">
                             <h3 class="card__title" id="product8">Áo khác nhẹ</h3>
-                            <span class="card__status text-bold text-danger">420.000 VND</span>
+                            <span class="card__status text-bold text-danger" id="price8">420.000 VND</span>
                             <h5 class="card__status text-success">Số lượng: <span id="quantity8">50</span></h5>
                         </div>
                     </div>
@@ -290,22 +291,37 @@
             let quantity = Math.floor($('#quantity' + index).text());
             let order = Math.floor($('#order' + index).val());
             let product = $('#product' + index).text();
+            let price = $('#price' + index).text();
             let result = quantity - order;
+
+            price = price.replace("VND", "");
+            price = price.replace(" ", "");
+            price = price.replace(".", "");
+            let total = price * order;
+            total = total.toLocaleString('it-IT', {
+                style: 'currency',
+                currency: 'VND'
+            });
             if (order <= 0) {
                 toastr.warning("Số lượng phải là số nguyên dương")
                 return;
             }
             if (result >= 0) {
                 document.getElementById('quantity' + index).innerHTML = result;
-                toastr.success("Đăt hàng thành công " + order + " " + product)
+                toastr.success("Đăt hàng thành công " + order + " " + product + " giá " + total)
                 swal.fire({
                     title: product,
                     text: "Đã thêm vào giỏ hàng",
+                    html: "Mã sản phẩm: SP" + index + "<br> Đơn giá: " + $('#price' + index).text() + "<br>" + "Số lượng: " + order + "<br> Thành tiền: " + total,
                     icon: "success",
                     confirmButtonColor: "#3085d6",
                     cancelButtonColor: "#d33",
                     confirmButtonText: "Đồng ý"
                 })
+                setCookie('order' + index, order)
+                setCookie('name' + index, product)
+                setCookie('price' + index, $('#price' + index).text())
+                setCookie('total' + index, total)
             } else {
                 toastr.error("Số lượng " + product + " không đủ")
                 swal.fire({
@@ -317,6 +333,14 @@
                     confirmButtonText: "Đồng ý"
                 })
             }
+        }
+
+        function setCookie(cname, cvalue) {
+            const exdays = 1;
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
         }
     </script>
 </body>

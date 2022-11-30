@@ -97,20 +97,19 @@
                     <th scope="col">#</th>
                     <th scope="col">Sản phẩm</th>
                     <th scope="col">Số lượng</th>
+                    <th scope="col">Đơn giá</th>
                     <th scope="col">Thành tiền</th>
+                    <th scope="col">Xoá</th>
                 </tr>
             </thead>
             <tbody id="data">
                 <tr>
                     <th scope="row">1</th>
                     <td>
-                        <h6>Áo thể thao <span class="badge badge-danger badge-sm">x2</span></h6>
-                        <h6>Găng tay <span class="badge badge-danger badge-sm">x1</span></h6>
+                        <h6>Găng tay</h6>
                     </td>
-                    <td>1</td>
-                    <td>
-                        120.000 VND
-                    </td>
+                    <td><span class="badge badge-danger badge-sm">x1</span></td>
+                    <td>120.000 VND</td>
                 </tr>
 
             </tbody>
@@ -119,8 +118,54 @@
 
     </div>
     <script>
-        let html = "a"
-        $('#data').html($html)
+        $(document).ready(function() {
+            let html = "";
+            for (let i = 0; i < 100; i++) {
+                if (getCookie('order' + i) != "") {
+                    html = html + "<tr>";
+                    html = html + '<th scope="row">' + i + '</th>';
+                    html = html + '<td><h6>' + getCookie('name' + i) + '</h6></td>';
+                    html = html + ' <td><span class="badge badge-danger badge-sm">x' + getCookie('order' + i) + '</span></td>';
+                    html = html + '<td>' + getCookie('price' + i) + '</td>';
+                    html = html + '<td>' + getCookie('total' + i) + '</td>';
+                    html = html + '<td><a href="" class="btn btn-sm btn-danger" onclick="del(' + i + ')">Xoá</a></td>';
+                }
+            }
+
+            document.getElementById("data").innerHTML = html;
+
+        })
+
+        function setCookie(cname, cvalue) {
+            const exdays = 1;
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function del(index) {
+            setCookie('order' + index, "")
+            setCookie('name' + index, "")
+            setCookie('price' + index, "")
+            setCookie('total' + index, "")
+        }
     </script>
 </body>
 
