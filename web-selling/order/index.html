@@ -23,6 +23,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./toastr.js"></script>
     <link rel="stylesheet" href="./toastr.css">
+    <script src="../asset/js/audio.js"></script>
+    <link rel="stylesheet" href="../css/toggle.css">
 
     <script>
         $(document).ready(function() {
@@ -47,7 +49,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-
+        <audio id="audio" src="../asset/audio/LastChristmas.mp3"></audio>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -67,6 +69,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Liên hệ</a>
+                </li>
+                <li class="nav-item"></li>
+                <label class="switch">
+                    <input type="checkbox" onclick="play()">
+                    <span class="slider round"></span>
+                </label>
                 </li>
             </ul>
         </div>

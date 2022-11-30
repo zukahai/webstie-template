@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="../js/main.js"></script>
+    <title>Đặt hàng</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/member_css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='./styles.css'>
+    <script src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./toastr.js"></script>
+    <script src="../asset/js/audio.js"></script>
+    <link rel="stylesheet" href="./toastr.css">
+    <link rel="stylesheet" href="../css/toggle.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#navbarDropdown').mouseenter(function() {
+                $('.dropdown-menu').slideToggle(300, "linear");
+            });
+
+            $('.dropdown-menu').mouseleave(function() {
+                $(this).slideToggle(300, "linear");
+            });
+            N = 999;
+            $('.check').html("Còn " + N);
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-brand">
+        <a href="https://www.ctu.edu.vn/"><img src="../asset/images/DHCT.png" height="40px" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+        <audio id="audio" src="../asset/audio/LastChristmas.mp3"></audio>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../">Trang chủ <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./members">Thành viên</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./idea">Ý tưởng</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="/export">Xuất kho</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="/order">Đặt hàng</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Liên hệ</a>
+                </li>
+                <li class="nav-item"></li>
+                <label class="switch">
+                    <input type="checkbox" onclick="play()">
+                    <span class="slider round"></span>
+                </label>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Sản phẩm</th>
+                    <th scope="col">Tổng tiền</th>
+                    <th scope="col">Tiến trình</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>
+                        <h6>Áo thể thao <span class="badge badge-danger badge-sm">x2</span></h6>
+                        <h6>Găng tay <span class="badge badge-danger badge-sm">x1</span></h6>
+                    </td>
+                    <td>540.000 VND</td>
+                    <td onclick="process()">
+                        <iconify-icon icon="uil:process" width="40" height="40"></iconify-icon>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>
+                        <h6>Mũ thời trang <span class="badge badge-danger badge-sm">x1</span></h6>
+                        <h6>Dày thời trang <span class="badge badge-danger badge-sm">x1</span></h6>
+                        <h6>Thắt lưng thời trang <span class="badge badge-danger badge-sm">x2</span></h6>
+                    </td>
+                    <td>1.320.000 VND</td>
+                    <td onclick="process()">
+                        <iconify-icon icon="uil:process" width="40" height="40"></iconify-icon>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>
+                        <h6>Quần áo trẻ em <span class="badge badge-danger badge-sm">x8</span></h6>
+                    </td>
+                    <td>640.000 VND</td>
+                    <td onclick="process()">
+                        <iconify-icon icon="uil:process" width="40" height="40"></iconify-icon>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>
+                        <h6>Áo thể thao <span class="badge badge-danger badge-sm">x2</span></h6>
+                        <h6>Găng tay <span class="badge badge-danger badge-sm">x1</span></h6>
+                        <h6>Đày thể thao <span class="badge badge-danger badge-sm">x2</span></h6>
+                    </td>
+                    <td>958.000 VND</td>
+                    <td onclick="process()">
+                        <iconify-icon icon="uil:process" width="40" height="40"></iconify-icon>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>
+                        <h6>Khăn quằng len <span class="badge badge-danger badge-sm">x2</span></h6>
+                    </td>
+                    <td>200.000 VND</td>
+                    <td onclick="process()">
+                        <iconify-icon icon="uil:process" width="40" height="40"></iconify-icon>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    </div>
+    <script>
+        function process() {
+            swal.fire({
+                html: '<div class="timeline"><div class="outer">' +
+                    '<div class="card">' +
+                    '<div class="info">' +
+                    '<h3 class="title">Đã chuẩn bị hàng</h3>' +
+                    '<p>12:02:22 Ngày 20 tháng 11 năm 2022 </p>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="card">' +
+                    '<div class="info">' +
+                    '<h3 class="title">Đã đang giao hàng</h3>' +
+                    '<p>12:02:22 Ngày 21 tháng 11 năm 2022 </p>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="card">' +
+                    '<div class="info">' +
+                    '<h3 class="title">Đã vận chuyển hàng</h3>' +
+                    '<p>12:02:22 Ngày 22 tháng 11 năm 2022 </p>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="card">' +
+                    '<div class="info">' +
+                    '<h3 class="title">Hàng đến DH Cần Thơ</h3>' +
+                    '<p>12:02:22 Ngày 23 tháng 11 năm 2022 </p>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="card">' +
+                    '<div class="info">' +
+                    '<h3 class="title">Đã nhân hàng</h3>' +
+                    '<p>12:02:22 Ngày 24 tháng 11 năm 2022 </p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>',
+                text: "Đã thêm vào giỏ hàng",
+                icon: "success",
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Đóng"
+            })
+
+        }
+    </script>
+</body>
+
+</html>
