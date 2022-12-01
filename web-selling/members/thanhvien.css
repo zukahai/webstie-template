@@ -7,7 +7,10 @@ body {
     width: 100%;
     background-color: #FCFCFC;
     /* background-color: paleturquoise; */
+
+
 }
+
 
 .article-cell {
     grid-area: 'article-cell';
@@ -21,7 +24,7 @@ main {
     width: 80%;
     display: grid;
     /* grid-template-areas: 'article-cell article-cell article-cell left-cell'; */
-    grid-template-columns: 100%;
+    grid-template-columns: 70% 30%;
     gap: 10px;
     margin: 0 auto;
     font-family: 'Nunito', sans-serif;
@@ -29,8 +32,7 @@ main {
     padding-top: 70px;
 }
 
-article,
-aside {
+article, aside {
     height: 80vh;
     /* background-color: plum; */
 }
@@ -48,8 +50,7 @@ aside {
     border-radius: 9999px;
 }
 
-#head,
-#btn-work {
+#head, #btn-work {
     /* width: 100%; */
     /* background-color: #F95555; */
     height: 80px;
@@ -69,8 +70,7 @@ aside {
     cursor: pointer;
 }
 
-#info-student,
-#work {
+#info-student, #work {
     width: 100%;
     height: 400px;
     opacity: 1;
@@ -83,8 +83,7 @@ aside {
     /* background-color: aliceblue; */
 }
 
-#work table,
-#info-lecturer table {
+#work table, #info-lecturer table {
     margin: 0 auto;
     width: 90%;
 }
@@ -112,6 +111,7 @@ aside {
     height: 300px;
 }
 
+
 .card-item {
     background: #F4F4F4;
     box-shadow: 2px 2px 9px rgba(7, 9, 31, 0.26), inset -2px -2px 0px rgba(0, 0, 0, 0.04), inset 2px 2px 5px 1px #FFFFFF;
@@ -128,20 +128,17 @@ aside {
     border-radius: 6px;
 }
 
-#info-student .main-content,
-#work .main-content {
+#info-student .main-content, #work .main-content {
     height: 96%;
 }
 
-#info-student .main-content.hidden,
-#work .main-content.hidden {
+#info-student .main-content.hidden, #work .main-content.hidden {
     transition: .2s;
     transform: translateX(-30%) scale(.8);
     opacity: 0;
 }
 
-#info-student .main-content.show,
-#work .main-content.show {
+#info-student .main-content.show, #work .main-content.show {
     transition: .2s;
     transform: scale(1);
 }
@@ -172,6 +169,7 @@ aside {
     font-weight: 400;
     margin-top: -30px;
     padding: 0px;
+
 }
 
 .card-header .stu-avt {
@@ -208,9 +206,9 @@ aside {
 .avt-circle {
     width: 130px;
     height: 130px;
-    background-image: url(../asset/images/2.png);
+    /* background-image: url(images/khoa.jpg); */
     background-size: cover;
-    background-position: 0px 0px;
+    background-position: 0px -20px;
 }
 
 .card-content {
@@ -304,8 +302,7 @@ table tr i {
     font-weight: 400;
 }
 
-.card-unenable h2,
-.card-unenable span {
+.card-unenable h2, .card-unenable span {
     opacity: .7;
 }
 
@@ -313,18 +310,22 @@ table tr i {
     main {
         width: 90%;
     }
+
 }
 
 @media only screen and (max-width: 1280px) {
     main {
         width: 95%;
     }
+
     .info-item h2 {
         font-size: 16px;
         font-weight: 600;
     }
+
     .info-item span {
         font-size: 11px;
         font-weight: 400;
     }
+
 }

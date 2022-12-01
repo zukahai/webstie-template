@@ -1,41 +1,56 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nhóm 4</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/owl-carousel.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../css/idea.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="thanhvien.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <style>
-        .thanhvien {
-            color: rgb(255, 255, 255);
-            background-color: rgb(16, 164, 115);
-        }
-    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="../js/main.js"></script>
+    <title>Thành viên</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/member_css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='./styles.css'>
+    <script src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./toastr.js"></script>
+    <script src="../asset/js/audio.js"></script>
+    <link rel="stylesheet" href="./toastr.css">
+    <link rel="stylesheet" href="../css/toggle.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#navbarDropdown').mouseenter(function() {
+                $('.dropdown-menu').slideToggle(300, "linear");
+            });
+
+            $('.dropdown-menu').mouseleave(function() {
+                $(this).slideToggle(300, "linear");
+            });
+            N = 999;
+            $('.check').html("Còn " + N);
+        });
+    </script>
+
+
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-brand" style="background-color: black;">
-        <a href="https://www.ctu.edu.vn/"><img src="../asset/images/DHCT.png" height="50px" alt="logo"></a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-brand">
+        <a href="https://www.ctu.edu.vn/"><img src="../asset/images/DHCT.png" height="40px" alt="logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+                <span class="navbar-toggler-icon"></span>
+              </button>
+        <audio id="audio" src="../asset/audio/LastChristmas.mp3"></audio>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
@@ -43,134 +58,126 @@
                     <a class="nav-link" href="../">Trang chủ <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/members">Thành viên</a>
+                    <a class="nav-link" href="../members">Thành viên</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/idea">Ý tưởng</a>
+                    <a class="nav-link" href="../idea">Ý tưởng</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/export">Xuất kho</a>
-                    </li>
+                    <a class="nav-link" href="../export">Xuất kho</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="../order">Đặt hàng</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="../process">Tiến trình</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="../cart">
+                        <iconify-icon icon="ic:twotone-shopping-cart-checkout" style="color: red;" width="30" height="25"></iconify-icon>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://thanhdieulam.github.io/thanhdieulam/">Liên hệ</a>
+                    <a class="nav-link" href="#">Liên hệ</a>
+                </li>
+                <li class="nav-item"></li>
+                <label class="switch">
+                    <input type="checkbox" onclick="play()">
+                    <span class="slider round"></span>
+                </label>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <main>
-        <article class="article-cell">
-            <section id="head">
-            </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <ul class="list-group">
+                    <li class="list-group-item active" id="member1" onclick="member(1)">Nguyễn Văn A</li>
+                    <li class="list-group-item" id="member2" onclick="member(2)">Trần Thị B</li>
+                    <li class="list-group-item" id="member3" onclick="member(3)">Phan Đức C</li>
+                    <li class="list-group-item" id="member4" onclick="member(4)">Nguyễn Văn D</li>
+                </ul>
+            </div>
 
-            <section id="info-student">
-                <div class="main-content card-item">
-                    <div class="card-header">
-                        <div class="stu-avt card-item circle">
-                            <div class="avt-circle circle">
-
-                            </div>
-                        </div>
-                        <h1>Lâm Thị Thanh Diệu</h1>
-                        <p>B1905741</p>
-                    </div>
-                    <div class="card-content">
-                        <table>
-
-                            <tr>
-                                <td width="20%"></td>
-                                <td width="35%">
-                                    <p>
-                                        <i class="fas fa-birthday-cake"></i> <span>09/07/2001</span>
-                                    </p>
-                                </td>
-                                <td>
-                                    <p>
-                                        <i class="fas fa-graduation-cap"></i> <span>Quản Lí Công Nghiệp</span>
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <p>
-                                        <i class="fas fa-phone-alt"></i> <span>0779073112</span>
-                                    </p>
-                                </td>
-                                <td>
-                                    <p>
-                                        <i class="fas fa-envelope"></i> <span>dieub1905741@student.ctu.edu.vn</span>
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <p>
-                                        <i class="fas fa-map-marker-alt"></i> <span>Cần Thơ</span>
-                                    </p>
-                                </td>
-                                <td>
-                                    <p>
-                                        <i class="fas fa-percentage"></i> <span>Đóng góp: 100%</span>
-                                    </p>
-                                </td>
-                            </tr>
-
-                        </table>
-                    </div>
-
-                    <div class="card-footer">
-                        <div class="social">
-                            <a href="https://www.instagram.com/th.diuuu_/"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.facebook.com/mynameisthanhdieu"><i class="fab fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="info-lecturer">
-                <div class="main-content card-item">
-                    <table>
+            <div class="col-12 col-md-9">
+                <table class="table">
+                    <thead>
                         <tr>
-                            <td width="70px"></td>
-                            <td width="30px"><i class="fas fa-user"></i></td>
-                            <td><b>Giảng viên hướng dẫn: </b></td>
-                            <td>Nguyễn Văn Khanh</td>
+                            <th scope="col">Tên thành viên</th>
+                            <th scope="col">Nội dung thực hiên</th>
+                            <th scope="col">Đóng góp</th>
                         </tr>
+                    </thead>
+                    <tbody id="data">
                         <tr>
-                            <td></td>
-                            <td width="30px"><i class="fas fa-envelope"></i>
-                                <td><b>Email:</b></td>
-                                <td>vankhanh@ctu.edu.vn</td>
-
+                            <th scope="row" id="name">Nguyễn Văn A</th>
+                            <td id="content">
+                                <h6>Làm Front End 1</h6>
+                                <h6>Làm Front End 2</h6>
+                                <h6>Làm Front End 3</h6>
+                            </td>
+                            <td><span class="badge badge-danger" id="contributor">100%</span></td>
                         </tr>
 
-                        <tr>
-                            <td></td>
-                            <td width="30px"><i class="fas fa-briefcase"></i>
-                                <td><b>Đơn vị công tác: </b></td>
-                                <td>BM. Tự động hóa</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td width="30px"><i class="fas fa-book"></i>
-                                <td><b>Học phần: </b></td>
-                                <td>Công nghệ IOT và ứng dụng</td>
-                        </tr>
-                    </table>
-                </div>
-            </section>
-        </article>
-    </main>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-    
+    </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="./js/data.js"></script>
-    <script src="./js/script.js"></script>
+    </div>
+    <script>
+        let m = [{
+            name: "Nguyễn Văn A",
+            contents: [
+                "Làm công viêc A",
+                "Làm cộng việc B",
+                "Làm cộng việc C",
+            ],
+            contribute: "70%"
+        }, {
+            name: "Nguyễn Văn B",
+            contents: [
+                "Làm công viêc B",
+                "Làm cộng việc C",
+                "Làm cộng việc D",
+            ],
+            contribute: "80%"
+        }, {
+            name: "Nguyễn Văn C",
+            contents: [
+                "Làm công viêc C",
+                "Làm cộng việc D",
+                "Làm cộng việc E",
+            ],
+            contribute: "90%"
+        }, {
+            name: "Nguyễn Văn D",
+            contents: [
+                "Làm công viêc D",
+                "Làm cộng việc E",
+                "Làm cộng việc F",
+            ],
+            contribute: "100%"
+        }, ]
+
+        function member(index) {
+            for (let i = 0; i < 10; i++)
+                $("#member" + i).removeClass("active")
+            $("#member" + index).addClass("active")
+            index = index - 1;
+            document.getElementById("name").innerHTML = m[index].name;
+            let content = "";
+            m[index].contents.forEach(element => {
+                content = content + "<h6>" + element + "</h6>";
+            });
+            document.getElementById("content").innerHTML = content;
+            document.getElementById("contributor").innerHTML = m[index].contribute;
+        }
+    </script>
 </body>
 
 </html>
