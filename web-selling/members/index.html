@@ -24,6 +24,7 @@
     <script src="./toastr.js"></script>
     <script src="../asset/js/audio.js"></script>
     <link rel="stylesheet" href="./toastr.css">
+    <link rel="stylesheet" href="./member.css">
     <link rel="stylesheet" href="../css/toggle.css">
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
 
@@ -40,8 +41,6 @@
             $('.check').html("Còn " + N);
         });
     </script>
-
-
 </head>
 
 <body>
@@ -59,9 +58,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../members">Thành viên</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../idea">Ý tưởng</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="../export">Xuất kho</a>
@@ -82,9 +78,9 @@
                 </li>
                 <li class="nav-item"></li>
                 <label class="switch">
-                    <input type="checkbox" onclick="play()">
-                    <span class="slider round"></span>
-                </label>
+                        <input type="checkbox" onclick="play()">
+                        <span class="slider round"></span>
+                    </label>
                 </li>
             </ul>
         </div>
@@ -92,39 +88,40 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-3" onmouseleave="GVHD()">
                 <ul class="list-group">
-                    <li class="list-group-item active" id="member1" onclick="member(1)">Nguyễn Văn A</li>
-                    <li class="list-group-item" id="member2" onclick="member(2)">Trần Thị B</li>
-                    <li class="list-group-item" id="member3" onclick="member(3)">Phan Đức C</li>
-                    <li class="list-group-item" id="member4" onclick="member(4)">Nguyễn Văn D</li>
+                    <li class="list-group-item" id="member1" onmouseenter="member(1)">
+                        <img src="../asset/images/product1.png" class="img-sm"> Nguyễn Văn A
+                    </li>
+                    <li class="list-group-item" id="member2" onmouseenter="member(2)">
+                        <img src="../asset/images/product2.png" class="img-sm"> Nguyễn Văn B
+                    </li>
+                    <li class="list-group-item" id="member3" onmouseenter="member(3)">
+                        <img src="../asset/images/product3.png" class="img-sm"> Nguyễn Văn C
+                    </li>
+                    <li class="list-group-item" id="member4" onmouseenter="member(4)">
+                        <img src="../asset/images/product4.png" class="img-sm"> Nguyễn Văn D
+                    </li>
                 </ul>
             </div>
+            <!-- <div> -->
+            <div class="col-12 col-md-9" id="table">
+                <div id="ct">
+                    <div>
+                        <div class="card">
+                            <img src="../asset//images/2.png" alt="John" style="width:100%">
+                            <h1>Tên giáo viên</h1>
+                            <p class="title">Giáo viên hướng dẫn</p>
+                            <p>Đại học Cần Thơ</p>
+                            <p><button>Contact</button></p>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="col-12 col-md-9">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Tên thành viên</th>
-                            <th scope="col">Nội dung thực hiên</th>
-                            <th scope="col">Đóng góp</th>
-                        </tr>
-                    </thead>
-                    <tbody id="data">
-                        <tr>
-                            <th scope="row" id="name">Nguyễn Văn A</th>
-                            <td id="content">
-                                <h6>Làm Front End 1</h6>
-                                <h6>Làm Front End 2</h6>
-                                <h6>Làm Front End 3</h6>
-                            </td>
-                            <td><span class="badge badge-danger" id="contributor">100%</span></td>
-                        </tr>
-
-                    </tbody>
-                </table>
             </div>
         </div>
+
+        <!-- </div> -->
 
     </div>
 
@@ -134,18 +131,20 @@
             name: "Nguyễn Văn A",
             contents: [
                 "Làm công viêc A",
-                "Làm cộng việc B",
                 "Làm cộng việc C",
+                "Làm cộng việc D",
+                "Làm cộng việc E",
             ],
-            contribute: "70%"
+            contribute: "70%",
+            urlImage: "../asset/images/product1.png",
         }, {
             name: "Nguyễn Văn B",
             contents: [
                 "Làm công viêc B",
-                "Làm cộng việc C",
                 "Làm cộng việc D",
             ],
-            contribute: "80%"
+            contribute: "80%",
+            urlImage: "../asset/images/product2.png",
         }, {
             name: "Nguyễn Văn C",
             contents: [
@@ -153,29 +152,65 @@
                 "Làm cộng việc D",
                 "Làm cộng việc E",
             ],
-            contribute: "90%"
+            contribute: "90%",
+            urlImage: "../asset/images/product3.png",
         }, {
             name: "Nguyễn Văn D",
             contents: [
                 "Làm công viêc D",
                 "Làm cộng việc E",
                 "Làm cộng việc F",
+                "Làm công viêc C",
+                "Làm cộng việc D",
+                "Làm cộng việc E",
             ],
-            contribute: "100%"
+            contribute: "100%",
+            urlImage: "../asset/images/product4.png",
         }, ]
 
         function member(index) {
+
             for (let i = 0; i < 10; i++)
                 $("#member" + i).removeClass("active")
             $("#member" + index).addClass("active")
             index = index - 1;
-            document.getElementById("name").innerHTML = m[index].name;
+            // document.getElementById("name").innerHTML = m[index].name;
             let content = "";
             m[index].contents.forEach(element => {
                 content = content + "<h6>" + element + "</h6>";
             });
-            document.getElementById("content").innerHTML = content;
-            document.getElementById("contributor").innerHTML = m[index].contribute;
+            document.getElementById("ct").innerHTML = '<div class="avata"><img src="' + m[index].urlImage + '" class="img-avata"></div>' +
+                '<table class="table">' +
+                '<thead>' +
+                '<tr>' +
+                '<th scope="col">Tên thành viên</th>' +
+                '<th scope="col">Nội dung thực hiện</th>' +
+                '<th scope="col">Đóng góp</th>' +
+                '</tr>' +
+                '</thead>' +
+                '<tbody id="data">' +
+                '<tr>' +
+                '<th scope="row" id="name">' + m[index].name + '</th>' +
+                '<td id="content">' + content + '</td>' +
+                '<td><span class="badge badge-danger" id="contributor">' + m[index].contribute + '</span></td>' +
+                '</tr>' +
+                '</tbody>' +
+                '</table>';
+
+            // document.getElementById("content").innerHTML = content;
+            // document.getElementById("contributor").innerHTML = m[index].contribute;
+        }
+
+        function GVHD() {
+            document.getElementById("ct").innerHTML = '<div>' +
+                '<div class="card">' +
+                '<img src="../asset//images/2.png" alt="John" style="width:100%">' +
+                '<h1>Tên giáo viên</h1>' +
+                '<p class="title">Giáo viên hướng dẫn</p>' +
+                '<p>Đại học Cần Thơ</p>' +
+                '<p><button>Contact</button></p>' +
+                '</div>' +
+                '</div>'
         }
     </script>
 </body>

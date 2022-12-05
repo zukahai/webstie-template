@@ -8,7 +8,8 @@
 }
 
 .navbar {
-    background-color: #9a5d4d;
+    background-color: #FFA500;
+    color: black;
 }
 
 .navbar-collapse ul li a.nav-link:before {
@@ -70,8 +71,7 @@
     margin-top: 20px;
 }
 
-.gif
-{
+.gif {
     margin-top: 2%;
     height: 80%;
     width: 50%;

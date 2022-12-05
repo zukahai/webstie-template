@@ -1,0 +1,82 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    margin-top: 30px;
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}
+
+button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button:hover,
+a:hover {
+    opacity: 0.7;
+}
+
+.img-sm {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.img-avata {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    margin: auto;
+}
+
+.avata {
+    margin: auto;
+    width: 50%;
+}
+
+.list-group-item {
+    box-shadow: 5px 5px 5px lightblue;
+    transition: transform .2s;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.list-group-item:hover {
+    transform: scale(1.2);
+}
+
+#ct,
+td,
+th,
+table {
+    box-shadow: 5px 5px 5px lightblue;
+}
+
+table,
+#ct {
+    margin-top: 30px;
+    text-align: center
+}
