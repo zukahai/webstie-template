@@ -27,6 +27,11 @@
     <link rel="stylesheet" href="./member.css">
     <link rel="stylesheet" href="../css/toggle.css">
     <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+
 
     <script>
         $(document).ready(function() {
@@ -137,6 +142,9 @@
             ],
             contribute: "70%",
             urlImage: "../asset/images/product1.png",
+            masv: "123",
+            class: "TN19S3A1",
+            email: "abc@gmail.com",
         }, {
             name: "Nguyễn Văn B",
             contents: [
@@ -145,6 +153,9 @@
             ],
             contribute: "80%",
             urlImage: "../asset/images/product2.png",
+            masv: "234",
+            class: "TN19S3A7",
+            email: "ssss@gmail.com",
         }, {
             name: "Nguyễn Văn C",
             contents: [
@@ -154,6 +165,9 @@
             ],
             contribute: "90%",
             urlImage: "../asset/images/product3.png",
+            masv: "666",
+            class: "TN19S3A2",
+            email: "abeeec@gmail.com",
         }, {
             name: "Nguyễn Văn D",
             contents: [
@@ -166,6 +180,9 @@
             ],
             contribute: "100%",
             urlImage: "../asset/images/product4.png",
+            masv: "888",
+            class: "TN19S3A3",
+            email: "a332424bc@gmail.com",
         }, ]
 
         function member(index) {
@@ -193,6 +210,21 @@
                 '<th scope="row" id="name">' + m[index].name + '</th>' +
                 '<td id="content">' + content + '</td>' +
                 '<td><span class="badge badge-danger" id="contributor">' + m[index].contribute + '</span></td>' +
+                '</tr>' +
+                '</tr>' +
+                '</thead>' +
+                '<tbody id="data">' +
+                '<tr>' +
+                '<th scope="row" id="name"> <i class="fas fa-id-card"></i> &nbsp Mã sinh viên</th>' +
+                '<td colspan="2">' + m[index].masv + '</td>' +
+                '</tr>' +
+                '<tr>' +
+                '<th scope="row" id="name"> <i class="fas fa-school"></i> &nbsp Lớp</th>' +
+                '<td colspan="2">' + m[index].class + '</td>' +
+                '</tr>' +
+                '<tr>' +
+                '<th scope="row" id="name"> <i class="fas fa-envelope-square"></i> &nbsp Email</th>' +
+                '<td colspan="2">' + m[index].email + '</td>' +
                 '</tr>' +
                 '</tbody>' +
                 '</table>';
